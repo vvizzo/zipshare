@@ -63,7 +63,9 @@ def main():  # {{{
     new_flist: list = []
 
     # Archive name, configurable from command line?
-    arc_name_stem = 'mnwshare'
+    # q'n'd way to get current dir as stem: last part of current dir path
+    # at least it is system independent...
+    arc_name_stem = os.path.split(os.getcwd())[-1]
     arc_name_item = 1
     arc_name = f'{arc_name_stem}{str(arc_name_item).zfill(3)}.zip'
 
